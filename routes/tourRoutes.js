@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const tourController = require('./../controllers/tourController');
 
-router.route('/').get(tourController.getAllTours);
+router.route('/').get(tourController.checkBody, tourController.getAllTours);
 router.route('/:id').get(tourController.getTourByID);
 
 module.exports = router;
